@@ -4,7 +4,7 @@ exports.handler = async (event, context, callback) => {
     // TODO implement
   const search = event.search;
   //console.log(searchKey);
-  const res = await fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q='+search+'&type=video&key=AIzaSyA-nDg1OTapOEqY1UVdX5sVZW_4lWfSJ9k');
+  const res = await fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q='+search+'&type=video&key=YOUR_API_KEY');
   const json = await res.json();
   
   // var title = "";
