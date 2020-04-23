@@ -21,9 +21,9 @@ function getHtml(template) {
   return template.join('\n');
 }
 
-const ID = 'AKIA4DL2GFQ6HWLZM4KH';
-const SECRET = 'gQhW0Z6ZRbYsXE6+yjygr2R4Ayjk82v+PxrO1u7L';
-const BUCKET_NAME = 'fileupload-tanveer';
+const ID = 'YOUR_ID';
+const SECRET = 'YOUR_SECRET ID';
+const BUCKET_NAME = 'ANY_BUCKET';
 
 const s3 = new AWS.S3({
 	accessKeyId: ID,
