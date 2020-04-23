@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--<script src="/app.js"></script>-->
+</head>
+  <body>
+
+    <header>
+		<h2>Upload Files to S3</h2>
+	</header>
+
+    <form method="POST" enctype="multipart/form-data" action="https://race0s0jbd.execute-api.us-east-2.amazonaws.com/latest/upload">
+	  <h1>File Upload</h1>
+	  
+	  <input type="file" id="fileinput" name="fileinput">
+      <p id="status">Please select a file</p>
+	  
+      <input type="submit" value="Upload">
+    </form>
+	
+	<!--<form method="GET" action="https://race0s0jbd.execute-api.us-east-2.amazonaws.com/latest/download">
+	<input type="submit" value="Display">	
+	
+	</form>-->
+	
+	<button value="Display" onclick="displayClick()">Display</button>
+	<table class="table">
+	  <thead>
+		<tr>
+			<th scope="col">File Name</th>
+			<th scope="col">Size</th>
+		</tr>
+	  </thead>
+	  <tbody id="tablebody"></tbody>
+	</table>
+
+	
+    <script>
+	
+	function uploadFile() {
+	
+	}
+
+	function displayClick() {
+		//event.preventDefault();
+		$('#tablebody').append($(
+			'<tr>' +
+			'<td>'+ '</td>' +
+			'<td>' + '</td>' +
+			'</tr>'
+		));
+
+		$.ajax({
+			crossDomain: true,
+			url: 'https://race0s0jbd.execute-api.us-east-2.amazonaws.com/latest/download',
+			type: 'GET',
+			xhrFields: {
+				withCredentials: false
+			},
+			success: function(data) {
+				console.log("help!!!!");
+			}
+		});
+		
+	}
+
+	displayClick();
+	
+	
+    </script>
+  </body>
+</html>

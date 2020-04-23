@@ -1,0 +1,23 @@
+// GET integration request mapping template never application/xml
+{
+    "email" : "$input.params('email')"
+}
+
+
+// GET integration response mapping template application/xml
+#set($root = $input.path('$'))
+<?xml version="1.0">
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://www.w3.org/2003/05/soap-envelope/" soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
+    <soap:Body>
+        <outputs>
+            #foreach($key in $root.keySet())
+            <output>
+                <key>$key</key>
+                <value>$root.get($key)</value>
+            </output>
+            #end
+        </outputs>
+    </soap:Body>
+</soapenv:Envelope>
+
+//Method response application/soap+xml

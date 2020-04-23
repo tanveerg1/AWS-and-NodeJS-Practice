@@ -1,0 +1,5 @@
+{
+    "num1":  "$input.params('num1')",
+    "num2":  "$input.params('num2')", 
+    "operationType": "$input.params('operationType')"   
+}

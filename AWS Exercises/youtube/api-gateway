@@ -1,0 +1,4 @@
+//POST integration request mapping template application/json
+{
+    "search": $input.json('$.search')
+}

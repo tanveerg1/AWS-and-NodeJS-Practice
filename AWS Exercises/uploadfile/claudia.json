@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "uploadfile-executor",
+    "name": "uploadfile",
+    "region": "us-east-2"
+  },
+  "api": {
+    "id": "race0s0jbd"
+  }
+}

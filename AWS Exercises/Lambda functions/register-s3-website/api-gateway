@@ -1,0 +1,14 @@
+// POST integration request mapping template application/json
+{
+    "email": $input.json('$.email'),
+    "username": $input.json('$.username'),
+    "password": $input.json('$.password'),
+    "confirmPassword": $input.json('$.confirmPassword')
+}
+
+// GET integration request mapping template application/json
+
+{
+    "email":  "$input.params('email')",
+    "password": "$input.params('password')"
+}
